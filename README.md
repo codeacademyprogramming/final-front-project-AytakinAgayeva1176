@@ -1,6 +1,6 @@
-# Asaginda qeyd olunan sehifeler yazilmalidir
+## Asaginda qeyd olunan sehifeler yazilmalidir
 
-## Layihe 1
+### Layihe 1
 
 ### Saglam Aile - https://www.saglamaile.az/  
   
@@ -20,11 +20,9 @@
 
 PS. Bu layihe tek layiheni tek isleyen telebeler ucun nezerde tutulub
 
-## Layihe 2
+### Layihe 2
 
 ### Syring - https://syring.spyropress.com/
-
-Asaginda qeyd olunan sehifeler yazilmalidir  
 
   - Home
     - Home Main
