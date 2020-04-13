@@ -1,10 +1,8 @@
-# Layihe 1
+# Asaginda qeyd olunan sehifeler yazilmalidir
 
-### Saglam Aile - https://www.saglamaile.az/
+## Layihe 1
 
-## Texniki tabsiriq.
-
-  Asaginda qeyd olunan sehifeler yazilmalidir  
+### Saglam Aile - https://www.saglamaile.az/  
   
 - Home
 - Muayineler
@@ -22,11 +20,9 @@
 
 PS. Bu layihe tek layiheni tek isleyen telebeler ucun nezerde tutulub
 
-# Layihe 2
+## Layihe 2
 
 ### Syring - https://syring.spyropress.com/
-
-## Texniki tabsiriq.
 
 Asaginda qeyd olunan sehifeler yazilmalidir  
 
