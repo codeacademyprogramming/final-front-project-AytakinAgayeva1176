@@ -22,5 +22,39 @@
 
 PS. Bu layihe tek layiheni tek isleyen telebeler ucun nezerde tutulub
 
+# Layihe 2
 
+### Syring - https://syring.spyropress.com/
+
+## Texniki tabsiriq.
+
+Asaginda qeyd olunan sehifeler yazilmalidir  
+
+  - Home
+    - Home Main
+  - Pages 
+    - Contact us 2
+    - Our clinic
+    - FAQ
+    - Pricing
+  - Doctors
+    - Doctor Single
+    - Find a doctor
+  - Departments
+    - Medical Departments
+    - Dental Clinic
+  - Blog
+    - Single Blog
+      - Single Post Standard
+  - Shop
+    - Sidebar left
+    - Card
+    - Checkout
+  
+#### Optional 
+  - Pages
+    - Sample Page 2 
+      - Book an Appoinment
+      - Schedule
+  
 
