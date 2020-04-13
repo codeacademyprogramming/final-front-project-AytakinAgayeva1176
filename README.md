@@ -8,7 +8,7 @@
   
 - Home
 - Muayineler
-- Filiabllar
+- Filiallar
 - Simptomlar
 - Haqqimizda
   - Rehberlik
