@@ -30,7 +30,7 @@ body{
 
 .wrapper{
     position: relative;
-    min-height: 1000px;
+    min-height: 100vh;
 }
 
 header{
@@ -211,7 +211,8 @@ footer{
     font-size: 14px;
     z-index: 12;
     position: absolute;
-    bottom: 0;
+    bottom: -60px;
+    margin-top: 30px;
 }
 
 @media (max-width : 778px){

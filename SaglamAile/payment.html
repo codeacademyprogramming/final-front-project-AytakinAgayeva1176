@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <div class="wrapper"> 
     <header>
         <a href="index.html"></a>
         <div class="head-right">
@@ -86,19 +87,19 @@
                             <input type="text" placeholder="L-kod(əgər varsa)">
                         </div>
                         <div class="col-12">
-                            <input type="tel" name="" id="" placeholder="Mobil nömrə">
+                            <input type="tel" name="phone" id="phone" placeholder="Mobil nömrə">
                         </div>
                         <div class="col-12">
-                            <input type="text" placeholder="Ödəyəcəyiniz məbləği daxil edin">
+                            <input type="number" name="price" id="price" max="3" placeholder="Ödəyəcəyiniz məbləği daxil edin">
                         </div>
 
                         <div class="col-12">
                             <div class="sum">
-                                <p>0.00</p>
+                                <p>0 AZN</p>
                             </div>
                         </div>
                         <div class="bttn">
-<p></p>
+                            <p></p>
                             <button type="submit" id="payment">Ödəniş et</button>
                         </div>
                     </div>
@@ -159,12 +160,14 @@
             <i class="fab fa-whatsapp"></i>
         </div>
 
-
-
     </footer>
+
+</div>
     <script src="https://kit.fontawesome.com/4d10e62fd0.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script> -->
 
+    <script src="js/mask.js"></script>
     <script src="js/script.js"></script>
 </body>
 
