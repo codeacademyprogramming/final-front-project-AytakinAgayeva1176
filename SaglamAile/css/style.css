@@ -28,6 +28,11 @@ body{
     overflow-x: hidden;
 }
 
+.wrapper{
+    position: relative;
+    min-height: 1000px;
+}
+
 header{
     width: 100%;
     display: flex;
@@ -196,9 +201,6 @@ header>a{
     transform: scale(1, 1);
 }
 
-
-
-
 footer{ 
     display: flex;
     justify-content: space-between;
@@ -208,7 +210,7 @@ footer{
     align-items: center;
     font-size: 14px;
     z-index: 12;
-    position: relative;
+    position: absolute;
     bottom: 0;
 }
 
