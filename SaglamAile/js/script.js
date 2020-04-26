@@ -1,147 +1,232 @@
-$(function() {
+$(function () {
 
 
-        let index2 = 0;
-        let slider = $(".slider-content");
-    
-        setInterval(() => {
-            index2++;
-            if (index2 > slider.length - 1) {
-                index2 = 0;
-            }
-            slider.each(function (index, element) {
-                $(element).css({
-                    "opacity": "0"
-                });
-                $(element).removeClass("animate");
-            });
-            slider.eq(index2).css({
-                "opacity": "1"
-            });
-            slider.eq(index2).addClass('animate');
-    
-    
-            $(".img-content>div").each(function () {
-                $(this).addClass("d-none").removeClass("d-block");
-                $(this).css("opacity", "0");
-            });
-            $(".img-content>div").eq(index2).removeClass("d-none").addClass("d-block");
-            $(".img-content>div").eq(index2).css("opacity", "1");
-    
-            $(".dots li").each(function () {
-                $(this).removeClass("active-dot");
-            });
-            $(".dots li").eq(index2).addClass("active-dot");
-    
-            $(".dots h3").each(function () {
-                $(this).addClass("d-none").removeClass("d-block");
-                $(this).css("opacity", "0");
-            });
-            $(".dots h3").eq(index2).removeClass("d-none").addClass("d-block");
-            $(".dots h3").eq(index2).css("opacity", "1");
-        }, 4000);
-    
-    
-        $(document).on("click", ".openmenu", function () {
-            $(".menu").removeClass("openmenu").addClass("closemenu");
-            $(".head-right").addClass("activeside");
-            $("header").addClass("fixed-header");
-            $("section").css("top", "147px");
-            $(".main").css("top", "147px");
-            $("footer").css("bottom", "-147px");
-            $("#footer").css("bottom", "0");
-            $(".aside-nav").addClass("show-me");
-            $(".menu span").removeClass("remove1 remove2 remove3").addClass("active1 active2");
-            $(".menu").css("transform", "rotate(45deg)");
-    
-        })
-    
-        $(document).on("click", ".closemenu", function () {
-            $(".menu").removeClass("closemenu").addClass("openmenu")
-            $(".aside-nav").removeClass("show-me");
-            $(".head-right").removeClass("activeside");
-            $("header").removeClass("fixed-header");
-            $("section").css("top", "0");
-            $(".main").css("top", "0");
-            $("footer").css("bottom", "0");
-            $(".menu span").removeClass("active3 ").addClass("remove1 remove2 remove3");
-            $(".menu span").removeClass("active2 active1");
-            $(".menu").css("transform", "rotate(0deg)");
-        })
-    
-        $(window).scroll(function () {
-            if ($(window).scrollTop() > 147) {
-                $(".small-nav").addClass("fixed-nav")
-            }
-            else {
-                $(".small-nav").removeClass("fixed-nav")
-            }
-        });
-    
-        $(document).on("click", ".openmap", function () {
-            $(".mapmarker").removeClass("openmap").addClass("closemap");
-            $(".branche-menu>div:last-child").css("display", "block");
-        });
-    
-        $(document).on("click", ".closemap", function () {
-            $(".mapmarker").removeClass("closemap").addClass("openmap");
-            $(".branche-menu>div:last-child").css("display", "none")
-        })
-    
-        $(document).on("click", ".show-accord", function () {
-            $(".accord").removeClass("show-accord").addClass("hide-accord");
-            $(".accord-content").animate({
-                height: "show"
-            }, 500, function () {
-                $(".accord i").css("transform", "rotate(0deg)");
-                $(".accord-content").css("display", "block");            
-            });        
-        })
-    
-        $(document).on("click", ".hide-accord", function () {
-            $(".accord").removeClass("hide-accord").addClass("show-accord");        
-            $(".accord-content").animate({
-                height: "hide",
-            }, 500, function () {
-                $(".accord i").css("transform", "rotate(-90deg)");
-                $(".accord-content").css("display", "none");
-            });
-        })
-    
+    let index2 = 0;
+    let slider = $(".slider-content");
 
 
-$("#phone").mask("+994 XX XXX XX XX" ,{placeholder :"+994 __ ___ __ __"})
+    // Create dots for slider
 
-});
-
-$(document).on("keyup" , "#price" , function(e){
- let max = 3 ; 
- let price = $("#price").val();
-    if (price.length == max) {
-        if(parseInt(price)>500){
-            price=500; 
+    function createDots() {
+        for (let i = 0; i < $(".slider img").length - 1; i++) {
+            let dot = "<li> </li>"
+            $(".dots ul").append(dot);
         }
-       
-    } else if (price.length > max) {
-        
-        price =  $("#price").val().substring(0, max);
-        price=500; 
-      
     }
-    $(".sum").css({
-        "background-color" : "#159ee3",
-        "color" : "white"
-    });
-   
-    $(".sum p").text(price + "AZN");
-   
+    createDots();
 
-    if(!$("#price").val()){
-        $(".sum").css({
-            "background-color" : "transparent",
-            "color" : "#7c7c7c"
+    // Slider on click   *******************
+
+
+    function slideOnClick() {
+        $(document).on("click", ".dots li", function () {
+            let indexDot = $(this).index();
+
+            $(".dots li").removeClass("active-dot");
+            $(this).addClass("active-dot");
+
+            slider.css("opacity", "0");
+            slider.eq(indexDot).css("opacity", "1");
+
+            $(".img-content>div").addClass("d-none").removeClass("d-block").css("opacity", "0");
+            $(".img-content>div").eq(indexDot).removeClass("d-none").addClass("d-block").css("opacity", "1");
+
+            $(".dots h3").addClass("d-none").removeClass("d-block").css("opacity", "0");
+            $(".dots h3").eq(indexDot).removeClass("d-none").addClass("d-block").css("opacity", "1");
+
         });
-
-        $(".sum p").text("0 AZN");
     }
+
+    slideOnClick()
+
+
+   
+   setInterval(() => {
+        index2++;
+        if (index2 > slider.length - 1) {
+            index2 = 0;
+        }
+        slider.css("opacity", "0").removeClass('animate');
+        slider.eq(index2).css("opacity", "1").addClass('animate');
+
+        $(".img-content>div").addClass("d-none").removeClass("d-block").css("opacity", "0");
+        $(".img-content>div").eq(index2).removeClass("d-none").addClass("d-block").css("opacity", "1");
+
+        $(".dots li").removeClass("active-dot");
+        $(".dots li").eq(index2).addClass("active-dot");
+
+        $(".dots h3").addClass("d-none").removeClass("d-block").css("opacity", "0");
+        $(".dots h3").eq(index2).removeClass("d-none").addClass("d-block").css("opacity", "1");
+    }, 5000);
+
+
+
+    // Burger Menu / Aside Nav show/hide
+
+    $(document).on("click", ".openmenu", function () {
+        $(".menu").removeClass("openmenu").addClass("closemenu");
+        $(".head-right").addClass("activeside");
+        $("header").addClass("fixed-header");
+        $("section").css("top", "147px");
+        $("footer").css("bottom", "-147px");
+        $("#footer").css("bottom", "0");
+        $(".aside-nav").addClass("show-me");
+        $(".menu span").removeClass("remove1 remove2 remove3").addClass("active1 active2");
+        $(".menu").css("transform", "rotate(45deg)");
+
+    })
+
+    $(document).on("click", ".closemenu", function () {
+        $(".menu").removeClass("closemenu").addClass("openmenu")
+        $(".aside-nav").removeClass("show-me");
+        $(".head-right").removeClass("activeside");
+        $("header").removeClass("fixed-header");
+        $("section").css("top", "0");
+        $("footer").css("bottom", "0");
+        $(".menu").css("transform", "rotate(0deg)");
+        $(".menu span").addClass("remove1 remove2 remove3");
+        $(".menu span").removeClass("active2 active1");
+      
+    })
+
+
+
+    // fixed nav on scroll*********************************
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 147) {
+            $(".small-nav").addClass("fixed-nav")
+        }
+        else {
+            $(".small-nav").removeClass("fixed-nav")
+        }
+    });
+
+
+
+
+    // Branches map menu ***********************************************
+
+    $(document).on("click", ".mapmarker", function () {
+        $(this).toggleClass("openmap");
+        if ($(this).hasClass("openmap")) {
+            $(".map-ul").css("display", "block");
+        }
+        else (
+            $(".map-ul").css("display", "none")
+        );
+
+    });
+
+
+
+    //Doctor - Accordion*************************************************
+
+    $(document).on("click", ".accord", function () {
+        $(this).closest('.row').find('.accord-content').slideToggle();
+        $(this).toggleClass('hide-accord');
+        if ($(this).hasClass("hide-accord")) {
+            $(this).find('i').css("transform", "rotate(-90deg)");
+        }
+        else {
+            $(this).find('i').css("transform", "rotate(0deg)");
+        }
+    })
+
+
+
+    // Contact icons ************************
+
+    $(document).on("mouseenter", ".msg", function () {
+        $(".msg").css("transform", "rotate(360deg)")
+        $(".msg-bord1").removeClass("d-none");
+        $(".msg-bord2").removeClass("d-none")
+        $(".contacts li").css("box-shadow", "0 0 15px 0 rgba(0, 0, 0, 0.2)");
+        $(".contacts li").css("opacity", "1");
+        $(".contacts li:first-child").css("bottom", "276px");
+        $(".contacts li:nth-child(2)").css("bottom", "204px");
+        $(".contacts li:last-child").css("bottom", "132px");
+    })
+
+    $(document).on("mouseleave", ".msg", function () {
+        $(".msg").css("transform", "rotate(0deg)");
+        $(".msg-bord1").addClass("d-none");
+        $(".msg-bord2").addClass("d-none")
+        $(".contacts li").css("box-shadow", "0 0 0 0 rgba(0, 0, 0, 0)");
+        $(".contacts li:first-child").css("bottom", "80px");
+        $(".contacts li:nth-child(2)").css("bottom", "80px");
+        $(".contacts li:last-child").css("bottom", "80px");
+        $(".contacts li").css("opacity", "0");
+    })
+
+
+    // Payment **********************************************************
+    $(document).on("keyup", "#price", function (e) {
+        let max = 3;
+        let price = $("#price").val();
+        if (price.length >= max) {
+            if (parseInt(price) > 500) {
+                price = 500;
+            }
+        }
+
+        $(".sum").css({
+            "background-color": "#159ee3",
+            "color": "white"
+        });
+        $(".sum p").text(price + "AZN");
+
+
+        if (!$("#price").val()) {
+            $(".sum").css({
+                "background-color": "transparent",
+                "color": "#7c7c7c"
+            });
+            $(".sum p").text("0 AZN");
+        }
+
+    });
+
+
+    // Symptoms map ***********************************
+
+    // select area of the man's map
+    $(document).on("mouseover", "map[name = 'mapman'] area", function () {
+        $("#man").attr("src", `${$(this).attr("data-part")}`);
+    });
+
+    $(document).on("mouseout" , "map[name = 'mapman'] area" , function(){
+        $("#man").attr("src", "assert/images/man_empty.png");
+    })
+
+     // select area of the woman's map
+    $(document).on("mouseover", "map[name = 'mapwoman'] area", function () {
+        $("#woman").attr("src", `${$(this).attr("data-part")}`);
+    });
+
+    $(document).on("mouseout" , "map[name = 'mapwoman'] area" , function(){
+        $("#woman").attr("src", "assert/images/man_empty.png");
+    })
+
+    
+    //  redirect to symptoms 
+
+    $(document).on("click", "map area", function () {
+       $(".symptoms-map").addClass("d-none");
+       $(".symptoms-list").removeClass("d-none")
+    });
+
+    $(document).on("click", "map area[data-tags= '4914']", function () {
+        $(".symptoms-map").addClass("d-none");
+        $(".symptoms-list").removeClass("d-none");
+        $(".heart-symp").addClass("d-none");
+
+     });
+
+     $(document).on("click", "map area[data-tags= '4919']", function () {
+        $(".symptoms-map").addClass("d-none");
+        $(".symptoms-list" , ".symptoms-list div").removeClass("d-none");
+        $(".head-symp").addClass("d-none");
+
+     });
 })
+

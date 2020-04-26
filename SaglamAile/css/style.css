@@ -61,6 +61,7 @@ header{
 }
 
 header>a{
+    cursor: pointer;
     width: 101px;
     height: 116px;
     background-image: url(../assert/icons/logo.svg);
@@ -85,6 +86,7 @@ header>a{
     font-weight: 800;
     font-family: 'black';
     margin-top: 5px;
+    cursor: pointer;
 } 
 
 
@@ -112,6 +114,7 @@ header>a{
     justify-content: center;
     align-items: center;
     z-index: 20;
+    cursor: pointer;
 }
 
 .style-menu{
@@ -205,7 +208,7 @@ footer{
     display: flex;
     justify-content: space-between;
     width: 100vw;
-    padding: 0 40px 8px;
+    padding: 0 40px 6px;
     color: rgb(220, 220, 220);
     align-items: center;
     font-size: 14px;
@@ -324,6 +327,7 @@ footer{
       padding: 0 40px;
       box-sizing: border-box;
       position: absolute;
+      top: 147px;
       width: 100%;
       color: #159ee3;
   }
@@ -420,7 +424,7 @@ footer{
     right: 0;
     z-index: 16;
     padding: 135px 0px 0 60px;
-   overflow-y: scroll;
+    overflow-y: scroll;
     clip-path: ellipse(100% 50% at 200% 50%);
     transition: all 0.45s linear; 
     box-shadow: 0px 0 0px 0 rgba(0, 0, 0, 0);
@@ -489,33 +493,37 @@ footer{
     overflow-y: scroll;
   }
   }
+
+
  
-
-   /* a:hover {
-    text-decoration: underline white;
-    transition: linear .2s;
-} */
-
-/* .aside-nav div a{
+  .aside-nav-content a{
     position: relative;
+    cursor: pointer;
 }
-.aside-nav a::before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 1px;
-    background: #fff;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    animation-duration: 0.2s;
-    transition: all 0.2s linear; 
+
+
+.aside-nav-content a:hover::before {
+  width: 100%;
+  display: block;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: all 0.2s linear;
 }
-.aside-nav a:hover::before{
-    content: "";
-    display: block;
-    width: ;
-} */
+
+.aside-nav-content a::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: all 0.2s linear;
+}
 
 
 
@@ -1000,7 +1008,7 @@ height: calc( 100% - 50px);
     position: relative;
 }
 
-.branche-menu>div:last-child{
+.map-ul{
     display: none;
     width: 160px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 20px 0px;
@@ -1013,7 +1021,7 @@ height: calc( 100% - 50px);
     z-index: 99;
     transition: .5s;
 }
-.branche-menu>div:last-child::before{
+.map-ul::before{
     content: "";
     width: 0;
     height: 0;
@@ -1032,10 +1040,10 @@ height: calc( 100% - 50px);
     text-decoration: none;
 }
 
-.branche-menu li{
+.map-ul li{
      padding: 9px 25px;
 }
-.branche-menu li:hover{
+.map-ul li:hover{
     background-color: #1490CE;
 }
 
@@ -1294,6 +1302,8 @@ position: relative;
         width: 100%;
     }
 
+
+    /* Symptoms ******************************* */
     
     .symp p{
         color: #404040c7;
@@ -1305,3 +1315,149 @@ position: relative;
     .symp{
         text-align: center;
     }
+
+    .map-man{
+        position: relative;
+        background-image: url(../assert/images/man.jpg);
+        background-repeat: no-repeat;
+    }
+
+
+    .map-woman{
+        background-repeat: no-repeat;
+        position: relative;
+        background-image: url(../assert/images/woman.jpg);
+    }
+
+    area {
+        cursor: pointer;
+        outline: none;
+      }
+    
+
+
+      .symptoms-list input{
+            width: 100%;
+            height: 58px;
+            padding: 0 50px 0 30px;
+            border: 1px solid #c2c2c2;
+            font-size: 17px;
+            background: #fff url(../assert/icons/search_icon.svg) 
+            no-repeat calc(100% - 30px) 50%;
+            border-radius: 5px;
+            font-family: "regular";
+            color: #159ee3;
+          }
+        
+          .symptoms-list input:focus {
+            border-color: #159ee3;
+          }
+        
+          .symptoms-list input::placeholder {
+            opacity: .6;
+          }
+
+
+           .symptoms-list img{
+              border-radius: 8px;
+              width: 100%;
+          }
+
+          .symptoms-list span{
+            color: #404040;
+            font-size: 18px;
+            line-height: 2;
+          }
+
+          .symptoms-list p{
+            font-size: 14px;
+            line-height: 1.57;
+            color: #7c7c7c;
+          }
+
+    /* ***************Contact Icons*************************** */
+
+    .contact-icons ul{
+        position: fixed;
+        right: 20px;
+        bottom: 150px;
+       
+    }
+
+    .contact-icons li{
+        position: fixed;
+        right: 20px;
+        bottom: 60px;
+        margin-top: 10px;
+        font-size: 30px;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        transition:  .3s;
+    }
+
+
+    .contact-icons li:first-child {
+        background-color:#3B5998;
+    }
+    .contact-icons li:nth-child(2) {
+        background-color:#29B200;
+    }
+    .contact-icons li:last-child {
+        background-color:#EE8208;
+    }
+
+    .msg{
+        transition:  .3s;
+        z-index: 10;
+        font-size: 30px;
+        position: fixed;
+        right: 19px;
+        bottom: 59px;
+        height: 62px;
+        width: 62px;
+        border-radius: 50%;
+        background-color: #159ee3;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+    }
+
+   .msg-bord2{
+    transition:  .3s;
+    height: 72px;
+    width: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(128, 128, 128, 0.236);
+    position: fixed;
+    right: 14px;
+    bottom: 54px;
+    z-index: 10;
+      border-radius: 50%;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+   }
+   
+   .msg-bord1{
+    transition:  .3s;
+    height: 84px;
+    width: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid rgba(128, 128, 128, 0.1);
+    position: fixed;
+    right: 8px;
+    bottom: 48px;
+    z-index: 10;
+      border-radius: 50%;
+      
+   }

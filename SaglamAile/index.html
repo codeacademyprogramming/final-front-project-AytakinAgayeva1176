@@ -7,9 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="16x16" href="assert/icons/favicon-16x16.png">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/home.css">
-  <title>Document</title>
+  <title>Sağlam Ailə</title>
 </head>
 
 <body>
@@ -83,15 +85,15 @@
   <div class="bcg">
     <div class="bcg-content">
       <div class="img-content">
-        <div class="d-block" style="opacity: 1 ; transition: 4s;">
+        <div data-aos= "fade-down"  class="d-block animateslider" style="opacity: 1 ; transition: 4s;">
           <h2>EVİNİZDƏ MÜAYİNƏ XİDMƏTİ</h2>
           <div class="btnn"><span>Daha ətraflı <i class="fas fa-chevron-right"></i> </span></div>
         </div>
-        <div class="d-none" style="opacity: 0 ; transition: 4s;">
+        <div  class="d-none" style="opacity: 0 ; transition: 4s;">
           <h2>LABORATOR XİDMƏTLƏR</h2>
           <div class="btnn"><span>Daha ətraflı <i class="fas fa-chevron-right"></i> </span></div>
         </div>
-        <div class="d-none" style="opacity: 0 ; transition: 4s;">
+        <div  class="d-none" style="opacity: 0 ; transition: 4s;">
           <h2>Polinik XİDMƏTLƏR</h2>
           <div class="btnn"><span>Daha ətraflı <i class="fas fa-chevron-right"></i> </span></div>
         </div>
@@ -108,10 +110,6 @@
       <div class="dots">
         <ul>
           <li class="active-dot"></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
         </ul>
 
         <em></em>
@@ -128,45 +126,45 @@
   <div class="aside-nav">
     <div class="aside-nav-content">
 
-    <div>
+      <div>
         <a href="analyzes.html"> Müayinələr</a>
-    </div>
-    <div>
+      </div>
+      <div>
         <a href="branches.html">Filiallar</a>
-    </div>
-    <div>
+      </div>
+      <div>
         <a href="management.html">Haqqımızda</a>
         <ul>
-            <li><a href="management.html">Rəhbərlik</a></li>
-            <li><a href="career.html">Karyera</a></li>
+          <li><a href="management.html">Rəhbərlik</a></li>
+          <li><a href="career.html">Karyera</a></li>
         </ul>
-    </div>
-    <div>
+      </div>
+      <div>
         <a href="clinic.html">Poliklinika</a>
-    </div>
-    <div>
+      </div>
+      <div>
         <a href="doctors.html">Həkimlər</a>
-    </div>
-    <div>
+      </div>
+      <div>
         <a href="loyaltycards.html">Loyallıq kartları</a>
-    </div>
-    <div>
+      </div>
+      <div>
         <a href="symptoms.html">Simptomlar</a>
-    </div>
-    <div>
+      </div>
+      <div>
         <a href="checkup.html">Check-up paketlər</a>
-    </div>
+      </div>
 
-</div>
-</div>
+    </div>
+  </div>
 
   <footer id="footer">
     <div class="footer-left">
       <div><span>Saglam Ailə © 2019</span></div>
       <div> <span> Site by <img src="assert/icons/jis.svg" alt=""> Jeykhun Imanov Studio</span></div>
       <div> <a href="https://www.netty.az/">
-              <img src="https://www.netty.az/netty2019winner.png" alt="NETTY 2019 Winner"></a></div>
-  </div>
+          <img src="https://www.netty.az/netty2019winner.png" alt="NETTY 2019 Winner"></a></div>
+    </div>
     <div class="main-footer-right">
       <span>Bizi izlə:</span>
       <i class="fab fa-facebook-f"></i>
@@ -179,8 +177,31 @@
 
 
   </footer>
+
+  <div class="contact-icons">
+    <div class="msg-bord1 d-none">
+      <div class="msg-bord2 d-none">
+
+      </div>
+    </div>
+    <div class="msg">
+      <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <ul class="contacts">
+      <li> <i class="fab fa-facebook-messenger"></i></li>
+      <li><i class="fab fa-whatsapp"></i></li>
+      <li><i class="fas fa-comments"></i></li>
+    </ul>
+  </div>
+
   <script src="https://kit.fontawesome.com/4d10e62fd0.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+      AOS.init();
+  </script>
 
   <script src="js/script.js"></script>
 </body>

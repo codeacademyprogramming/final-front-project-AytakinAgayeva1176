@@ -204,6 +204,7 @@ footer{
     align-items: center;
     font-size: 14px;
     z-index: 12;
+    margin-top: 10px;
 }
 
 
@@ -261,10 +262,10 @@ footer{
 }
 
 .nav{
-    width: 50%;
     height: 100%;
     position: absolute;
     top: 0;
+    left: 0;
     float: left;
     padding-left: 100px;
     z-index: 9;
@@ -433,7 +434,21 @@ footer{
     100% { right: 0; }
   }
 
-  @media ( max-width:1024px){
+
+  @media ( min-width: 1040px) and (max-width : 1280px){
+    .sliderpart{
+        width: calc( 100% - 200px );
+    }
+
+    .bcg{
+        width: calc( 100% - 540px);
+    }
+
+    .nav{
+        padding-left: calc( 10% - 100px);
+    }
+  }
+  @media ( max-width:1040px){
     .sliderpart{
         display: none;
     }
@@ -456,20 +471,33 @@ footer{
 
      .nav {
          width: 100%;
+         height: 100%;
          display: flex;
          justify-content: center;
          align-items: center;
          z-index: 6;
+         position: absolute;
+         top: 0;
+         margin: 0;
+         padding: 0;
      }
      .nav li{
          width: 200px;
          height: 200px;
+         margin: 10px;
+         box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.1), 0 40px 77px 0 rgba(0, 0, 0, 0.15);
      }
      .nav ul{
-         margin: 0;
+         margin-left: 20px;
+         padding: 0;
          display: flex;
          width: 500px !important;
      }
+
+     .footer-left>div>a>img{
+        width: 65px;
+        height: 35px;
+    }
     }
 
     
@@ -505,8 +533,22 @@ footer{
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+
 }
 
+/* .animateslider div{
+    animation: fadeslide .5s;
+}
+
+
+@keyframes fade{
+    0%{
+      top: 50px;  
+    }
+    100%{
+        top: 200px;
+    }
+} */
 .btnn i{
     font-size: 11px;
     margin-left: 10px;
@@ -635,3 +677,117 @@ footer{
   }
 
 
+
+  .aside-nav-content a{
+    position: relative;
+    cursor: pointer;
+}
+
+
+.aside-nav-content a:hover::before {
+  width: 100%;
+  display: block;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: all 0.2s linear;
+}
+
+.aside-nav-content a::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: all 0.2s linear;
+}
+
+
+
+
+    /* ***************Contact Icons*************************** */
+
+   
+
+    .contact-icons li{
+        position: absolute;
+        z-index: 9;
+        right: 20px;
+        bottom: 60px;
+        margin-top: 10px;
+        font-size: 30px;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:  .3s;
+    }
+
+
+    .contact-icons li:first-child {
+        background-color:#3B5998;
+    }
+    .contact-icons li:nth-child(2) {
+        background-color:#29B200;
+    }
+    .contact-icons li:last-child {
+        background-color:#EE8208;
+    }
+
+    .msg{
+        transition:  .3s;
+        z-index: 10;
+        font-size: 30px;
+        position: fixed;
+        right: 19px;
+        bottom: 59px;
+        height: 62px;
+        width: 62px;
+        border-radius: 50%;
+        background-color: #159ee3;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+    }
+
+   .msg-bord2{
+    transition:  .3s;
+    height: 72px;
+    width: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(128, 128, 128, 0.236);
+    position: fixed;
+    right: 14px;
+    bottom: 54px;
+    z-index: 10;
+      border-radius: 50%;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+   }
+   
+   .msg-bord1{
+    transition:  .3s;
+    height: 84px;
+    width: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid rgba(128, 128, 128, 0.1);
+    position: fixed;
+    right: 8px;
+    bottom: 48px;
+    z-index: 10;
+      border-radius: 50%;
+      
+   }
