@@ -211,22 +211,36 @@ $(function () {
     //  redirect to symptoms 
 
     $(document).on("click", "map area", function () {
-       $(".symptoms-map").addClass("d-none");
-       $(".symptoms-list").removeClass("d-none")
+       $(".symptoms-map").css("display" , "none");
+       $(".symptoms-list").css("display" , "block");
+       $(".symp-search").toggleClass("d-none")
     });
 
     $(document).on("click", "map area[data-tags= '4914']", function () {
-        $(".symptoms-map").addClass("d-none");
-        $(".symptoms-list").removeClass("d-none");
-        $(".heart-symp").addClass("d-none");
+        $(".symptoms-map").css("display" , "none");
+        $(".symptoms-list").css("display" , "block");
+        $(".heart-symp").css("display" , "none");
 
      });
 
      $(document).on("click", "map area[data-tags= '4919']", function () {
-        $(".symptoms-map").addClass("d-none");
-        $(".symptoms-list" , ".symptoms-list div").removeClass("d-none");
-        $(".head-symp").addClass("d-none");
+        $(".symptoms-map").css("display" , "none");
+        $(".symptoms-list" , ".symptoms-list div").css("display" , "block");
+        $(".head-symp").css("display" , "none");
 
      });
+
+
+     $(document).on("click" , ".symp-search" , function(){
+        $(".symptoms-map").css("display" , "none");
+        $(".symptoms-list").css("display" , "block");
+         $(".symp-search").toggleClass("d-none")
+     })
+
+     $(document).on("click" , ".return-map" , function(){
+        $(".symptoms-map").css("display" , "block");
+        $(".symptoms-list").css("display" , "none");
+         $(".symp-search").toggleClass("d-none")
+     })
 })
 

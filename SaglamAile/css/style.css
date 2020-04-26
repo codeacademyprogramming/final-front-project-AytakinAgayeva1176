@@ -1335,7 +1335,6 @@ position: relative;
       }
     
 
-
       .symptoms-list input{
             width: 100%;
             height: 58px;
@@ -1363,6 +1362,10 @@ position: relative;
               width: 100%;
           }
 
+          .symptoms-list{
+              display: none;
+          }
+
           .symptoms-list span{
             color: #404040;
             font-size: 18px;
@@ -1375,6 +1378,72 @@ position: relative;
             color: #7c7c7c;
           }
 
+.relative{
+    position: relative;
+}
+          .symp-search{
+            width: 58px;
+            height: 58px;
+            background-image: linear-gradient(220deg, #0fc8f0, #149de2);
+            box-shadow: 0 10px 20px 0 rgba(21, 158, 227, 0.5);
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+          }
+
+
+          .symp-search:hover{
+            box-shadow: 0 0px 20px 0 rgba(21, 158, 227, 0.5);
+          }
+
+          .return-map{
+            width: 58px;
+            height: 58px;
+            background-image: linear-gradient(220deg, #0fc8f0, #149de2);
+            box-shadow: 0 10px 20px 0 rgba(21, 158, 227, 0.5);
+            position: absolute;
+            top: 0px;
+            right: -58px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+          }
+
+          .return-map img{
+              width: 90%;
+              height: 90%;
+          }
+          .return-map:hover{
+            box-shadow: 0 0px 20px 0 rgba(21, 158, 227, 0.5);
+          }
+
+          @media (max-width: 768px){
+            .symptoms-map{
+                display: none !important;
+            }
+            .symptoms-list{
+                display: block !important;
+            }
+            .symp-search{
+                display: none;
+            }
+            .return-map{
+                display: none;
+            }
+          }
     /* ***************Contact Icons*************************** */
 
     .contact-icons ul{
