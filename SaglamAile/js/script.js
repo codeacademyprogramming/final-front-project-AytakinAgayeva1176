@@ -29,7 +29,7 @@ $(function () {
             slider.eq(indexDot).css("opacity", "1");
 
             $(".img-content>div").addClass("d-none").removeClass("d-block").css("opacity", "0");
-            $(".img-content>div").eq(indexDot).removeClass("d-none").addClass("d-block").css("opacity", "1");
+            $(".img-content>div").eq(indexDot).removeClass("d-none").addClass("d-block").css("opacity", "1").css('transform', 'translate(0px, -150px)').animate({ transform: 'translateY(-100px)' });
 
             $(".dots h3").addClass("d-none").removeClass("d-block").css("opacity", "0");
             $(".dots h3").eq(indexDot).removeClass("d-none").addClass("d-block").css("opacity", "1");
@@ -40,8 +40,8 @@ $(function () {
     slideOnClick()
 
 
-   
-   setInterval(() => {
+
+    setInterval(() => {
         index2++;
         if (index2 > slider.length - 1) {
             index2 = 0;
@@ -50,7 +50,7 @@ $(function () {
         slider.eq(index2).css("opacity", "1").addClass('animate');
 
         $(".img-content>div").addClass("d-none").removeClass("d-block").css("opacity", "0");
-        $(".img-content>div").eq(index2).removeClass("d-none").addClass("d-block").css("opacity", "1");
+        $(".img-content>div").eq(index2).removeClass("d-none").addClass("d-block").css("opacity", "1").css('transform', 'translate(0px, -150px)').animate({ transform: 'translate(0px, 0px)' },500);
 
         $(".dots li").removeClass("active-dot");
         $(".dots li").eq(index2).addClass("active-dot");
@@ -64,15 +64,20 @@ $(function () {
     // Burger Menu / Aside Nav show/hide
 
     $(document).on("click", ".openmenu", function () {
+        $(".menu span").addClass("active1");
         $(".menu").removeClass("openmenu").addClass("closemenu");
         $(".head-right").addClass("activeside");
         $("header").addClass("fixed-header");
         $("section").css("top", "147px");
         $("footer").css("bottom", "-147px");
-        $("#footer").css("bottom", "0");
+        $("#footer").css("bottom", "0px");
         $(".aside-nav").addClass("show-me");
-        $(".menu span").removeClass("remove1 remove2 remove3").addClass("active1 active2");
-        $(".menu").css("transform", "rotate(45deg)");
+        setTimeout(function () {
+            $(".menu span").addClass("active2");
+        }, 300);
+        setTimeout(function () {
+            $(".menu").css("transform", "rotate(45deg)");
+        }, 600);
 
     })
 
@@ -82,13 +87,15 @@ $(function () {
         $(".head-right").removeClass("activeside");
         $("header").removeClass("fixed-header");
         $("section").css("top", "0");
-        $("footer").css("bottom", "0");
-        $(".menu").css("transform", "rotate(0deg)");
-        $(".menu span").addClass("remove1 remove2 remove3");
-        $(".menu span").removeClass("active2 active1");
-      
+        $("footer").css("bottom", "-60px");
+            $(".menu").css("transform", "rotate(0deg)");
+            setTimeout(function () {
+                $(".menu span").removeClass("active2");
+            }, 300);
+            setTimeout(function () {
+                $(".menu span").removeClass("active1");
+            }, 600);
     })
-
 
 
     // fixed nav on scroll*********************************
@@ -100,8 +107,6 @@ $(function () {
             $(".small-nav").removeClass("fixed-nav")
         }
     });
-
-
 
 
     // Branches map menu ***********************************************
@@ -160,14 +165,15 @@ $(function () {
 
 
     // Payment **********************************************************
-    $(document).on("keyup", "#price", function (e) {
-        let max = 3;
+
+    $(document).on("keyup", "#price", function () {
+
         let price = $("#price").val();
-        if (price.length >= max) {
-            if (parseInt(price) > 500) {
-                price = 500;
-            }
+
+        if (parseInt(price) > 500) {
+            price = 500;
         }
+
 
         $(".sum").css({
             "background-color": "#159ee3",
@@ -194,53 +200,54 @@ $(function () {
         $("#man").attr("src", `${$(this).attr("data-part")}`);
     });
 
-    $(document).on("mouseout" , "map[name = 'mapman'] area" , function(){
+    $(document).on("mouseout", "map[name = 'mapman'] area", function () {
         $("#man").attr("src", "assert/images/man_empty.png");
     })
 
-     // select area of the woman's map
+    // select area of the woman's map
     $(document).on("mouseover", "map[name = 'mapwoman'] area", function () {
         $("#woman").attr("src", `${$(this).attr("data-part")}`);
     });
 
-    $(document).on("mouseout" , "map[name = 'mapwoman'] area" , function(){
+    $(document).on("mouseout", "map[name = 'mapwoman'] area", function () {
         $("#woman").attr("src", "assert/images/man_empty.png");
     })
 
-    
+
     //  redirect to symptoms 
 
     $(document).on("click", "map area", function () {
-       $(".symptoms-map").css("display" , "none");
-       $(".symptoms-list").css("display" , "block");
-       $(".symp-search").toggleClass("d-none")
+        $(".symptoms-map").css("display", "none");
+        $(".symptoms-list").css("display", "block");
+        $(".symp-search").toggleClass("d-none")
     });
 
     $(document).on("click", "map area[data-tags= '4914']", function () {
-        $(".symptoms-map").css("display" , "none");
-        $(".symptoms-list").css("display" , "block");
-        $(".heart-symp").css("display" , "none");
+        $(".symptoms-map").css("display", "none");
+        $(".symptoms-list").css("display", "block");
+        $(".heart-symp").css("display", "none");
 
-     });
+    });
 
-     $(document).on("click", "map area[data-tags= '4919']", function () {
-        $(".symptoms-map").css("display" , "none");
-        $(".symptoms-list" , ".symptoms-list div").css("display" , "block");
-        $(".head-symp").css("display" , "none");
+    $(document).on("click", "map area[data-tags= '4919']", function () {
+        $(".symptoms-map").css("display", "none");
+        $(".symptoms-list", ".symptoms-list div").css("display", "block");
+        $(".head-symp").css("display", "none");
 
-     });
+    });
 
 
-     $(document).on("click" , ".symp-search" , function(){
-        $(".symptoms-map").css("display" , "none");
-        $(".symptoms-list").css("display" , "block");
-         $(".symp-search").toggleClass("d-none")
-     })
 
-     $(document).on("click" , ".return-map" , function(){
-        $(".symptoms-map").css("display" , "block");
-        $(".symptoms-list").css("display" , "none");
-         $(".symp-search").toggleClass("d-none")
-     })
+    $(document).on("click", ".symp-search", function () {
+        $(".symptoms-map").css("display", "none");
+        $(".symptoms-list").css("display", "block");
+        $(".symp-search").toggleClass("d-none")
+    })
+
+    $(document).on("click", ".return-map", function () {
+        $(".symptoms-map").css("display", "block");
+        $(".symptoms-list").css("display", "none");
+        $(".symp-search").toggleClass("d-none")
+    })
 })
 

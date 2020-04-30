@@ -57,7 +57,7 @@ header{
     background-color: white !important;
 }
 .closemenu p{
-    border-color: #159ee3 !important;
+   background-color:  #159ee3 !important;
 }
 
 header>a{
@@ -143,65 +143,36 @@ header>a{
     top: 14px;
     transition: all 0.3s linear;
 }
+
+
 .main-menu p{
     position: absolute;
     width: 20px;
-    border: 1px solid #159ee3;
+    height: 2px;
+    background-color:  #159ee3;
     transition: all 0.3s linear;;
 }
+
 .style-menu p{
     position: absolute;
     width: 20px;
-    border: 1px solid white;
+    height: 2px;
+    background-color: white;
     transition: all 0.3s linear;
 }
 
-
 .active1 p:first-child{
-    transition: .5s linear;
-    width: 0px;
+    width: 2px;
+
 }
 .active1 p:nth-child(3){
-    transition: .5s linear;
     width: 0px;
     left: 0;
-    border: none;
 }
 
 .active2 p:first-child{
-    width: 20px;
-    top: 7px;
-    transition: .5s linear;
-    transform: rotate(90deg);
-}
-
-.active2 p:last-child{
-    border: none;
-}
-.remove2 p:first-child{
-    transform: scale(0.05, 1);
-    top: 0px;
-    transition: .5s linear;
-    transform: rotate(-90deg);
-}
-.remove1 p:last-child{
-   display: block;
-   transform: scale(1, 1);
-   top: 7px;
-   transition: .5s linear;
-   transform: rotate(-90deg);
-}
-
-.remove2 p:last-child{
-    transform: scale(0.05, 1);
-    top: 14px;
-    transition: .5s linear;
-    transform: rotate(90deg);
-}
-
-.remove3 p:first-child , .remove2 p:last-child{
-    transition: .5s linear;
-    transform: scale(1, 1);
+   height: 20px;
+   top: -2px;
 }
 
 footer{ 
@@ -218,8 +189,16 @@ footer{
     margin-top: 30px;
 }
 
+.branchesftr{
+    position: relative;
+}
+
 @media (max-width : 778px){
     footer{
+        flex-direction: column;
+    }
+
+    .branchesftr{
         flex-direction: column;
     }
 
@@ -253,6 +232,7 @@ footer{
   margin-left: 15px;
   font-size: 15px;
 }
+
 
 .main-footer-right i{
     margin-left: 15px;
@@ -452,7 +432,7 @@ footer{
   .aside-nav-content::-webkit-scrollbar-thumb {
     background: white; 
     border-radius: 5px;
-    height: 30px;
+    height: 30px ;
   }
  
   .aside-nav-content div{
@@ -480,23 +460,9 @@ footer{
     padding-bottom:18px;
   }
 
-  @media (max-width: 767px) and (min-width: 480px){
-      .aside-nav {
-      width: 360px;
-      right: -360px;
-  } 
-  .aside-nav-content div{
-    width: calc(100% - 10px);
-  }
-
-  .aside-nav-content{
-    overflow-y: scroll;
-  }
-  }
-
 
  
-  .aside-nav-content a{
+.aside-nav-content a{
     position: relative;
     cursor: pointer;
 }
@@ -609,8 +575,11 @@ section{
 /****************************** Branches **********************************/
 
 .branche{
+    width: calc( 33% - 30px);
     height: 220px;
     position: relative;
+    margin: 15px;
+    box-sizing: border-box;
 }
 
 .branche a{
@@ -1125,6 +1094,10 @@ height: calc( 100% - 50px);
 position: relative;
  }
 
+ .therapy>div{
+     padding: 0 25px;
+ }
+
  .theraphy img{
      position: absolute;
      left: 42px;
@@ -1133,12 +1106,6 @@ position: relative;
 
  .therapy{
      padding: 0 55px;
- }
-
- @media( max-width : 768px){
-    .therapy{
-        padding:0;
-    }
  }
 
 
@@ -1249,7 +1216,7 @@ position: relative;
         color: #000;
         font-size: 16px;
         border-radius: 4px;
-       margin-bottom: 25px;
+        margin-bottom: 20px;
     }
     
     .payment{
@@ -1530,3 +1497,102 @@ position: relative;
       border-radius: 50%;
       
    }
+
+   @media (max-width: 767px){
+    .aside-nav {
+    width: 360px;
+    right: -360px;
+} 
+.aside-nav-content div{
+    margin-top: 20px;
+  width: calc(100% - 10px);
+}
+
+.aside-nav-content{
+  overflow-y: scroll;
+}
+
+.branche{
+    width: calc( 50% - 20px );
+    margin: 10px;
+}
+
+}
+ 
+
+   @media( max-width : 768px) and (min-width: 480px){
+    .therapy{
+        padding:0;
+    }
+    .clinic-respons>.row>div{
+        width: 50%;
+    }
+ }
+
+ @media( max-width : 480px) {
+   
+     .clinic-respons>.row>div{
+         width: 100%;
+         margin: 0 25px;
+     }
+
+    .therapy{
+        padding:0px;
+    }
+
+    header{
+        padding: 20px 20px 0;
+    }
+    .main{
+        padding: 0 10px;
+    }
+
+    .footer-left{
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .footer-left>div{
+        margin-top: 10px;
+    }
+
+
+  .maincontent{
+      margin-bottom: 130px;
+        padding: 0;
+    }
+   .payment input{
+       margin: 0 0 10px;
+   }
+
+    .sum{
+        height: 110px;
+        margin:5px 0 20px;
+    }
+
+    .wrapper{
+        min-height: 900px;
+    }
+     .theraphy img{
+       display: none;
+     }
+
+     .footer-left{
+         box-sizing: border-box;
+         margin-top: 30px;
+     }
+
+     .checkup .back{
+         display: none;
+     }
+
+     .doctors{
+         width: 100%;
+     }
+
+     .branche{
+        width: calc( 100% - 20px );
+        margin: 10px;
+    }
+ }
+

@@ -63,7 +63,7 @@ header>a{
     background-color: white !important;
 }
 .closemenu p{
-    border-color: #159ee3 !important;
+    background-color: #159ee3 !important;
 }
 
 
@@ -143,55 +143,25 @@ header>a{
 .main-menu p{
     position: absolute;
     width: 20px;
-    border: 1px solid #159ee3;
+    height: 2px;
+   background-color: #159ee3;
+   transition: .3s linear;
 }
 
 .active1 p:first-child{
-    transition: .5s linear;
-    width: 0px;
+    width: 2px;
+
 }
 .active1 p:nth-child(3){
-    transition: .5s linear;
     width: 0px;
     left: 0;
-    border: none;
 }
 
 .active2 p:first-child{
-    width: 20px;
-    top: 7px;
-    transition: .5s linear;
-    transform: rotate(90deg);
+   height: 20px;
+   top: -2px;
 }
 
-.active2 p:last-child{
-    border: none;
-}
-.remove2 p:first-child{
-    transform: scale(0.05, 1);
-    top: 0px;
-    transition: .5s linear;
-    transform: rotate(-90deg);
-}
-.remove1 p:last-child{
-   display: block;
-   transform: scale(1, 1);
-   top: 7px;
-   transition: .5s linear;
-   transform: rotate(-90deg);
-}
-
-.remove2 p:last-child{
-    transform: scale(0.05, 1);
-    top: 14px;
-    transition: .5s linear;
-    transform: rotate(90deg);
-}
-
-.remove3 p:first-child , .remove2 p:last-child{
-    transition: .5s linear;
-    transform: scale(1, 1);
-}
 
 footer{ 
     position: absolute;
@@ -460,7 +430,7 @@ footer{
         background-color: #159ee3;
     }
     .main-menu>span>p{
-        border-color: white;
+       background-color:  white;
     }
     .main-phone p::before{
        background-image: url(../assert/icons/phone_icon_active.svg);
@@ -485,7 +455,11 @@ footer{
          width: 200px;
          height: 200px;
          margin: 10px;
-         box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.1), 0 40px 77px 0 rgba(0, 0, 0, 0.15);
+      
+     }
+
+     .nav li a{
+            box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.1), 0 40px 77px 0 rgba(0, 0, 0, 0.15);
      }
      .nav ul{
          margin-left: 20px;
@@ -533,22 +507,8 @@ footer{
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-
 }
 
-/* .animateslider div{
-    animation: fadeslide .5s;
-}
-
-
-@keyframes fade{
-    0%{
-      top: 50px;  
-    }
-    100%{
-        top: 200px;
-    }
-} */
 .btnn i{
     font-size: 11px;
     margin-left: 10px;
@@ -662,12 +622,13 @@ footer{
     padding-bottom:18px;
   }
 
-  @media (max-width: 767px) and (min-width: 480px){
+  @media (max-width: 767px){
       .aside-nav {
       width: 360px;
       right: -360px;
   } 
   .aside-nav-content div{
+      margin-top: 20px;
     width: calc(100% - 10px);
   }
 
@@ -790,4 +751,35 @@ footer{
     z-index: 10;
       border-radius: 50%;
       
+   }
+
+   
+   @media (max-width: 480px){
+       .nav li{
+           width: 140px;
+           height: 140px;
+       }
+
+       .nav img {
+           padding: 20px 28px;
+       }
+
+       .nav p{
+           padding: 0 8px;
+       }
+
+       .nav ul li a::after {
+           width: 45px;
+           height: 45px;
+       }
+
+       .footer-left{
+           flex-direction: column;
+           margin-bottom: 10px;
+       }
+
+       .footer-left div{
+           margin-bottom: 10px;
+       }
+
    }
